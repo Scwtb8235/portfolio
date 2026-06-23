@@ -4,7 +4,7 @@ import About from './pages/About';
 function App(){
   return(
     <Routes>
-    <Route path="/" element={<h1>Home</h1>} />
+    <Route path="/" element={<Home />} />
     <Route path="/about" element ={<About/>} />
     </Routes>
   )
