@@ -4,7 +4,7 @@ const helmet = require('helmet');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const projectRoutes = require('./modules/projects/project.routes');
-
+const contactRoutes = require('./modules/contact/contact.routes');
 dotenv.config();
 
 const app = express();
@@ -18,6 +18,7 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((err) => console.error('MongoDB connection error:', err));
 
 app.use('/api/projects', projectRoutes);
+app.use('/api/contact', contactRoutes);
 
 app.get('/', (req, res) => {
   res.json({ message: 'API running' });
