@@ -4,6 +4,8 @@ const helmet = require('helmet');
 const dotenv = require('dotenv');
 dotenv.config();
 const app = express();
+const projectRoutes = require('./modules/projects/project.routes');
+app.use('/api/projects', projectRoutes);
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
