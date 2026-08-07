@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const projectRoutes = require('./modules/projects/project.routes');
 const contactRoutes = require('./modules/contact/contact.routes');
+const blogRoutes = require('./modules/blog/blog.routes');
 dotenv.config();
 
 const app = express();
@@ -19,7 +20,8 @@ mongoose.connect(process.env.MONGO_URI)
 
 app.use('/api/projects', projectRoutes);
 app.use('/api/contact', contactRoutes);
-
+app.use('/api/blog', blogRoutes);
+console.log('blog route mounted');
 app.get('/', (req, res) => {
   res.json({ message: 'API running' });
 });

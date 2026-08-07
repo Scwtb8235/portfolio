@@ -5,6 +5,8 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import BlogList from './pages/BlogList';
+import BlogPost from './pages/BlogPost';
 function App(){
   return(
     
@@ -14,10 +16,11 @@ function App(){
       <Route path="/about" element={<About />} />
       <Route path="/projects" element={<Projects />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/blog" element={<BlogList />} />
+      <Route path="/blog/:slug" element={<BlogPost />} />
     </Routes><
       Footer />
       </>
   )
 };
- export default App;
- 
+export default App;
