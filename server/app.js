@@ -21,6 +21,7 @@ mongoose.connect(process.env.MONGO_URI)
 app.use('/api/projects', projectRoutes);
 app.use('/api/contact', contactRoutes);
 app.use('/api/blog', blogRoutes);
+app.use(express.static('public'));
 console.log('blog route mounted');
 app.get('/', (req, res) => {
   res.json({ message: 'API running' });
