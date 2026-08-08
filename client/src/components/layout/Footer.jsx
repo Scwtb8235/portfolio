@@ -1,5 +1,9 @@
 function Footer() {
-  return <footer>© {new Date().getFullYear()} Mulugeta Getahun </footer>
+  return (
+    <footer className="bg-gray-900 text-white text-center py-4 mt-auto">
+      © {new Date().getFullYear()} Mulugeta Getahun
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;
